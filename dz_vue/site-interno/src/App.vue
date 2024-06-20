@@ -1,14 +1,51 @@
+<template>
+  <div id="app">
+    <div class="backgroud_container"></div>
+    <div class="container_project_blog">
+      <BlogDetails :selectedCategory="selectedCategory"/>
+      <BtnTag @tag-click="changeCategory"/>
+    </div>
+
+  </div>
+</template>
+
+<script>
+import BlogDetails from './components/BlogDetails.vue'
+import BtnTag from './components/BtnTag.vue'
+
+export default {
+  name: 'App',
+  components: {
+    BlogDetails,
+    BtnTag
+  },
+  data () {
+    return {
+      selectedCategory: 'Кухня'
+    }
+  },
+  methods: {
+    // при нажатии на кнопку тэга, меняется активный блок
+    changeCategory (category) {
+      this.selectedCategory = category
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+#app {
 @font-face {
     font-family: Jost-Regular;
-    src: url(/dz/fonts/jost-regular.ttf);
+    src: url(./assets/fonts/jost-regular.ttf);
 }
 @font-face {
     font-family: Jost-semibold;
-    src: url(/dz/fonts/jost-semibold.ttf);
+    src: url(./assets/fonts/jost-semibold.ttf);
 }
 @font-face {
     font-family: DM-serif;
-    src: url(/dz/fonts/dm-serif-display-regular.ttf);
+    src: url(./assets/fonts/dm-serif-display-regular.ttf);
 }
 
 * {
@@ -56,7 +93,7 @@ a {
     color: #292F36;
 }
 .baner {
-    background-image: url(./img/header_foto.jpeg);
+    background-image: url(./assets/image/img/header_foto.jpeg);
     height: 758px;
     background-position: center;
 }
@@ -112,7 +149,7 @@ a {
     text-align: center;
     align-items: center;
     margin-top: 96px;
-    
+
 }
 .content_project h2 {
     font-family: DM-serif;
@@ -152,7 +189,7 @@ a {
 .sub_content_right a {
     display: block;
     background-color: #F4F0EC;
-    background-image: url(/dz/img/go.svg);
+    background-image: url(./assets/image/img/go.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 70px;
@@ -248,7 +285,7 @@ a {
     padding: 21px;
     border: 1px solid #F4F0EC;
     border-radius: 68px;
-    
+
 }
 .sub_content_blog {
     display: flex;
@@ -282,7 +319,7 @@ a {
 .sub_blog_right a {
     display: block;
     background-color: #F4F0EC;
-    background-image: url(/dz/img/go.svg);
+    background-image: url(./assets/image/img/go.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 70px;
@@ -356,7 +393,7 @@ a {
     position: relative;
 }
 .backgroud_container {
-    background-image: url(./img/header_foto_blog.png);
+    background-image: url(./assets/image/img/header_foto_blog.png);
     width: 100%;
     height: 356px;
     background-repeat: no-repeat;
@@ -449,7 +486,7 @@ a {
     a {
         display: block;
         background-color: #F4F0EC;
-        background-image: url(/dz/img/go.svg);
+        background-image: url(./assets/image/img/go.svg);
         background-repeat: no-repeat;
         background-position: center;
         width: 70px;
@@ -524,7 +561,7 @@ a {
     padding: 21px;
     border: 1px solid #F4F0EC;
     border-radius: 68px;
-    
+
 }
 .sub_content_blog_news {
     display: flex;
@@ -558,7 +595,7 @@ a {
 .sub_blog_right_news a {
     display: block;
     background-color: #F4F0EC;
-    background-image: url(/dz/img/go.svg);
+    background-image: url(./assets/image/img/go.svg);
     background-repeat: no-repeat;
     background-position: center;
     width: 70px;
@@ -592,7 +629,7 @@ a {
         border-radius: 50%;
     }
     a:last-child {
-        background-image: url(./img/go.svg);
+        background-image: url(./assets/image/img/go.svg);
         background-repeat: no-repeat;
         background-position: center;
         background-size: 7px;
@@ -605,7 +642,7 @@ a {
 
 /* blog Details */
 .container_baner_blog_det .backgroud_container {
-    background-image: url(./img_blog_details/header_foto_blog_details.jpeg);
+    background-image: url(./assets/image/img_blog_details/header_foto_blog_details.jpeg);
     width: 100%;
     height: 351px;
     background-repeat: no-repeat;
@@ -770,7 +807,7 @@ a {
         background-color: rgb(41, 47, 54);
     }
 }
-   
 
+}
 
-
+</style>
