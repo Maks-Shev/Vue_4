@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+    margin: 0;
+    padding: 0;
+}
 #app {
 @font-face {
     font-family: Jost-Regular;
@@ -46,11 +50,6 @@ export default {
 @font-face {
     font-family: DM-serif;
     src: url(./assets/fonts/dm-serif-display-regular.ttf);
-}
-
-* {
-    margin: 0;
-    padding: 0;
 }
 .container_nav, .container_baner, .container_project, .blog_container, .container_latest_post, footer {
     margin: 0 auto;
